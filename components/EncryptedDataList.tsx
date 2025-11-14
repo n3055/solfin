@@ -3,8 +3,24 @@
 import { useState, useEffect } from "react";
 import { Connection, PublicKey } from "@solana/web3.js";
 import toast from "react-hot-toast";
-import { PROGRAM_ID, getUserDataPDA } from "@/utils/program";
 import { RefreshCw, Search, FileText, Shield, Eye, Copy, Check } from "lucide-react";
+
+const PROGRAM_ID = new PublicKey(
+  "CcoCz8T5pShf5CYHNJHNngWLan2Z6Dz1nbeBWXRyS1VZ"
+);
+function getPubkeyFilePDA(userPublicKey: PublicKey) {
+  return PublicKey.findProgramAddressSync(
+    [Buffer.from("pubkey-file"), userPublicKey.toBuffer()],
+    PROGRAM_ID
+  );
+}
+
+function getUserDataPDA(userPublicKey: PublicKey) {
+  return PublicKey.findProgramAddressSync(
+    [Buffer.from("user-data"), userPublicKey.toBuffer()],
+    PROGRAM_ID
+  );
+}
 
 interface UserData {
   owner: string;
