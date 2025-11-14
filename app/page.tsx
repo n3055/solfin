@@ -4,8 +4,6 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import dynamic from "next/dynamic";
 import { UsernameList } from "@/components/UsernameList";
 import { EncryptedDataList } from "@/components/EncryptedDataList";
-import { UploadPubKeyFile } from "@/components/UploadPubKeyFile";
-import { UploadEncryptedData } from "@/components/UploadEncryptedData";
 import { Shield, Database, Key, Lock } from "lucide-react";
 
 const WalletMultiButton = dynamic(
@@ -93,7 +91,7 @@ export default function Home() {
               </div>
             </div>
             <div className="h-px bg-gradient-to-r from-green-500/50 via-green-500/20 to-transparent mb-6" />
-            <UploadPubKeyFile />
+            
           </div>
 
           <div className="bg-black/90 border border-green-500/30 rounded-lg p-6 shadow-lg shadow-green-500/10 hover:shadow-green-500/20 transition-all duration-300">
@@ -109,7 +107,7 @@ export default function Home() {
               </div>
             </div>
             <div className="h-px bg-gradient-to-r from-green-500/50 via-green-500/20 to-transparent mb-6" />
-            <UploadEncryptedData />
+          
           </div>
         </div>
 
